@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" xmlns:th="http//www.thymeleaf.og">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SPDC</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SPDC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Crear Usuarios</a>
+                <a class="nav-item nav-link" href="#">Crear Categorias</a>
+                <a class="nav-item nav-link disabled" href="#">Listar Productos</a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<br>
+
+<div class="container text-center">
+    <h1>Lista de productos</h1>
+</div>
+
+<div class="container text-center">
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Contenido</th>
+            <th scope="col">Fecha de Creacion</th>
+            <th scope="col">IdCategoria</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="articulo : ${listadoDeProductos}">
+            <td th:text="${articulo.id}"></td>
+            <td th:text="${articulo.titulo}"></td>
+            <td th:text="${articulo.contenido}"></td>
+            <td th:text="${articulo.fechaCreacion}"></td>
+            <td th:text="${articulo.idCategoria}"></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
